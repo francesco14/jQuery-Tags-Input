@@ -246,7 +246,7 @@
 				$.fn.tagsInput.importTags($(data.real_input),$(data.real_input).val());
 			}
 			if (settings.interactive) {
-				$(data.fake_input).val($(data.fake_input).attr('data-default'));
+				$(data.fake_input).attr("placeholder",$(data.fake_input).attr('data-default'));
 				$(data.fake_input).css('color',settings.placeholderColor);
 		        $(data.fake_input).resetAutosize(settings);
 
@@ -255,9 +255,6 @@
 				});
 
 				$(data.fake_input).bind('focus',data,function(event) {
-					if ($(event.data.fake_input).val()==$(event.data.fake_input).attr('data-default')) {
-						$(event.data.fake_input).val('');
-					}
 					$(event.data.fake_input).css('color','#000000');
 				});
 
